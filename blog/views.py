@@ -3,6 +3,20 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse('<h1>Blog Home</h1>')
+    post = [
+        {
+            'title':'Blog Post 1',
+            'author':'Tauseef',
+            'content':'This is the very first post',
+            'date_posted':'Jan,6 2021'
+        },
+        {
+            'title':'Blog Post 2',
+            'author':'admin',
+            'content':'This is the very second post',
+            'date_posted':'Jan,6 2021'
+        },
+    ]
+    return render(request, 'blog/home.html',{'posts':post})
 def about(request):
-    return HttpResponse('<h1>Welcome to About page</h1>')
+    return render(request,'blog/about.html',{'title':'About'})
