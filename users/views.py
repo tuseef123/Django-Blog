@@ -17,3 +17,6 @@ def register(request):
 @login_required
 def profile(request):
     return render(request,'users/profile.html')
+
+def check(request):
+    return render(request,'users/check.html')
